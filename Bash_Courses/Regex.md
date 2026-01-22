@@ -3,13 +3,19 @@
 ## Regex pattern 
 * `.` For missing letter (ex: c.t => display cat)
 * `^` <u>Caret</u> : sarting the line with (ex: ^ERROR), the opposite (end of line) : `$` (ex: log$). Or : "all except..."
-* `*`: One or more time the character ahead is repeated (ex: do*g => to display doooog)
+* `*`: One or more time the character ahead is repeated (ex: do*g => to match doooog or dog, \d\* to find 2 digits)
 * `\1`: backreference : a copy of the precedent character ((a)/1 = we search for 'aa')
 * `+` : If we are sure there are 2+ missing characters (ex: do+g), meaning : one or multiple character defined can appear
-* `?` : After a potential character (ex: colou?r => to get color and colour)
+* `?` : After a potential character (ex: colou?r => to get color and colour, <h1>(.\*?)<\/h1> to capture title and register it in group 1 ). ≠ With . because not greedy 
 * `|` : <u>Pipe</u> : to match two string (ex: red|white)
 * `[]`: A gathering of characters, meaning : "one character among them"
-* `{n}`: n = Minimum number of time we need to encounter the charcater define ahead. `{3,}` = three time of more
+* `{n}`: n = Minimum number of time we need to encounter the character define ahead. `{3,}` = two time of more, `{1,3}` = one to 2 
+* `\A`: Match the very start ≠ `\Z`
+
+## Type of characters
+* `\w`: match a letter
+* `\d`: match a digit
+* `\s`: match a space
 
 *Examples : operators*
 ```bash
@@ -44,6 +50,20 @@ if [[ "$url" =~ ^https?://([^/]+) ]];
 
 ```
 
+### Specificities
+#### Difference between .* and .*? Greedy and non greedy quantificators
+* `.*` : Match any character (.) and all coming after (*), without consideration for what we need to match. Example :
+```bash
+echo 'eeeAiiZuuuuAoooZeeee' | grep -E 'A.*Z' # Match AAiiZuuuuAoooZ
+# 1. Match A, and all coming after, up to the final e
+# 2. But the last character to match is Z, so the engine search for the last Z to display the final match
+```
+* `.*?` : Match the minimal repetition of a any character (non-greedy)
+```bash
+echo 'eeeAiiZuuuuAoooZeeee' | grep -E 'A.*?Z' # Match AiiZ
+echo 'eeeAiiZuuuuAoooZeeee' | grep -o 'A.*?Z' # Match AiiZ AND AoooZ
+```
+
 ### Group capture with parenthesis
 Create numbered capture groups, isolating subsets of a matched pattern
 ```bash
@@ -70,3 +90,6 @@ grep --color 'expression' file.txt # Color the findings
 grep -E # Grep Extended, including all meta-characters
 -i # Case insensitive
 ```
+
+### Additional ressources
+* [To test regex](https://regex101.com)

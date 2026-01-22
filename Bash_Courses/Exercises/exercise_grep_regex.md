@@ -42,3 +42,4 @@ $ grep 'nn' american-english | grep 'pp'
 ```bash
 grep -E --color '^(.).*\1$' file | grep -E '(.)\1{4}.*'
 ```
+
