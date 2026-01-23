@@ -43,3 +43,80 @@ $ grep 'nn' american-english | grep 'pp'
 grep -E --color '^(.).*\1$' file | grep -E '(.)\1{4}.*'
 ```
 
+-----------------------------------------------------------
+* Create a regex to test emails
+```bash
+#!/bin/bash
+
+# Regular expression for email validation
+regex="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+# Test cases
+emails=(
+    "galilea.mehmut@example.com"
+    "galilea_mehmut123@example.co.uk"
+    "ayuba.tama123@example.io"
+    "ayuba-tama@example.info"
+    "user+name@example.co"
+    "user.name@sub.domain.example.com"
+    "invalid-email@com"
+    "@example.com"
+    "user@.com"
+    "user@com."
+)
+
+# Function to test the regex against each email
+function test_email {
+    local email=$1
+    if [[ $email =~ $regex ]]; then
+        echo "$email - Match"
+    else
+        echo "$email - No Match"
+    fi
+}
+
+# Loop through each email and test it
+for email in "${emails[@]}"; do
+    test_email "$email"
+done
+
+# Exit and run 
+./test.sh
+```
+
+* Match the first section, no the second
+
+06 12 34 56 78
++33 6 12 34 56 78
+06.12.34.56.78
+0612345678
+
+06 12 34 56
+06123456789 (trop long)
+06-12-34-56-78-90
+```bash
+^(?:\+33|0)[1-9]\d{8}$
+```
+
+* Capture day, month and year into groups 
+
+23/01/2024
+23-01-2024
+2024/01/23
+```bash
+/^(?:(?<day>\d{2})[\/-](?<month>\d{2})[\/-](?<year>\d{4})|(?<year>\d{4})[\/-](?<month>\d{2})[\/-](?<day>\d{2}))$/gm
+```
+
+* Match the first section of hex and refuse the second 
+
+#FFFFFF
+#fff
+#123abc
+#456
+
+#fffff (5 caractères)
+#ggg (caractères invalides)
+FFFFFF (pas de #)
+```bash
+/^#([0-9A-F]{3}|[0-9A-F]{6})$/i
+```
