@@ -98,15 +98,6 @@ done
 ^(?:\+33|0)[1-9]\d{8}$
 ```
 
-* Capture day, month and year into groups 
-
-23/01/2024
-23-01-2024
-2024/01/23
-```bash
-/^(?:(?<day>\d{2})[\/-](?<month>\d{2})[\/-](?<year>\d{4})|(?<year>\d{4})[\/-](?<month>\d{2})[\/-](?<day>\d{2}))$/gm
-```
-
 * Match the first section of hex and refuse the second 
 
 #FFFFFF

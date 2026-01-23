@@ -91,6 +91,24 @@ Use backreferences with groups
 # Step 4 \2: paste the copied second capture group
 ```
 
+Create non-capture group to use alternatives `(?:...)`, example :
+* Capture day, month and year into groups 
+
+23/01/2024
+23-01-2024
+2024/01/23
+```bash
+/^(?:
+(?<day>0[1-9]|[12][0-9]|3[01])[\/-]
+(?<month>0[1-9]|1[0-2])[\/-]
+(?<year>\d{4})
+|
+(?<year2>\d{4})[\/-]
+(?<month2>[0][1-9]|1[0-2])[\/-]
+(?<day2>0[1-9]|[12][0-9]|3[01]))
+/gm
+```
+
 ### Using grep command
 ```bash
 grep --color 'expression' file.txt # Color the findings
