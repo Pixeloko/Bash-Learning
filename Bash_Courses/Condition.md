@@ -32,4 +32,6 @@ fi
 (( NUM < NUM )) # Numeric condition
 # And same, for greater, replace with a 'g'
 [[ "string" =~ pattern ]] # Check if a string match a regexp pattern
+[[ -d "$file" ]] # The found file is a directory
+[[ ! -s "$file" ]] # The found file has no size = empty
 ```

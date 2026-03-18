@@ -1,9 +1,28 @@
-### For loop
+# Loops types
+## For
 ```bash
 for i in directory/file; do
     echo "$i"
 done
 ```
+
+## While 
+```bash
+while [ condition ]; do
+    actions
+done
+```
+
+## Until 
+```bash
+until [ condition ]; do
+    actions
+done
+```
+
+## Disruption 
+`break` to stop the loop
+`continue` to skip remaining action and go to the next iterated item
 
 ### Listing
 `{A,B}` same as A B

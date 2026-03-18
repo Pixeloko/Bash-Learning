@@ -48,3 +48,4 @@ calculation
 `${#ARRAY[@]}` Get number of elements in ARRAY
 `${ARRAY[@]}` List of all element in array
 `${#ARRAY[1]}` Access a specifi position
+`{1..5}` int range
