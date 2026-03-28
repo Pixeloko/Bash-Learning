@@ -6,6 +6,13 @@ for i in directory/file; do
 done
 ```
 
+*loop over arguments passed when script is executed*
+```bash
+for item in "$@";do 
+    echo ${item}
+done
+```
+
 ## While 
 ```bash
 while [ condition ]; do

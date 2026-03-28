@@ -60,3 +60,4 @@ calculation
 `echo ${ARRAY[*]}` display all items in array 
 `${#ARRAY[1]}` Access a specifi position
 `{1..5}` int range
+`$(seq 1 10)` range int list
