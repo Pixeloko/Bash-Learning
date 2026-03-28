@@ -3,9 +3,17 @@
 
 `-d` is it a directory (See [Condition](Condition.md#examples-of-conditions))
 `-e` is it a file + `-f`is it regular, `-r`is it readable
-`-s` is file's size < 0
+`! -e` there is no such file
+`-s` is file's size < 0 ?
 `-w` is it writable
 `-x` is it executable
+*see more file type tests [here](https://ss64.com/bash/test.html)*
+
+*test in terminal*
+```bash
+test -e file
+echo $?
+```
 
 Substitution in a text file
 ```bash

@@ -25,7 +25,7 @@ echo "${2}"
 ```
 `${#}` For the number of arguments passed when executing the bash script
 
-`echo $?` to see exit code 
+`echo $?` to see exit code (ex : output of test)
 * 0=success
 * 1=fail
 * 126=command not executable

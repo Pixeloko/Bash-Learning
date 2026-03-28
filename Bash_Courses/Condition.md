@@ -25,13 +25,17 @@ fi
 [[ -z STRING ]] # Empty string
 [[ -n STRING ]] # Not empty string
 [[ STRING1 ≠ STRING2 ]] # Not empty string
+[[ STRING1 == STRING2 ]] 
+[[ "${VARIABLE1}" == "${VARIABLE2}" ]] # test variables
 [[ NUM -eq NUM ]] # Equal, for numerics
+[[ "${VARIABLE1}" -eq "${VARIABLE2}" ]] # test variables 
 [[ NUM -ne NUM ]] # Not equal
-[[ NUM -lt NUM ]] # Les than 
-[[ NUM -le NUM ]] # Les than or equal
+[[ NUM -lt NUM ]] # Less than (≠gt)
+[[ NUM -le NUM ]] # Less than or equal (≠ge)
 (( NUM < NUM )) # Numeric condition
 # And same, for greater, replace with a 'g'
 [[ "string" =~ pattern ]] # Check if a string match a regexp pattern
-[[ -d "$file" ]] # The found file is a directory
-[[ ! -s "$file" ]] # The found file has no size = empty
+[[ -e file ]] # verify the file exists (use with if)
 ```
+
+*to test multiple conditions use `&&` and `||` between each [[single condition]]*
