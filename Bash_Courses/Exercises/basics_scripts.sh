@@ -1,3 +1,4 @@
+# ========== INPUT/DATE/REDIRECTION ========== 
 #!/bin/bash user_registration.sh
 
 echo "1.register yourself"
@@ -25,3 +26,16 @@ cp output.txt backup.txt
 sleep 2
 echo "6.reading the output file"
 cat < output.txt
+
+# ========== FUNCTION/CONDITION ========== 
+#!/bin/bash check_root
+
+check_user(){
+	if [[ "${EUID}" -ne "0" ]];then
+		echo "access denied"
+		exit 1 # exit with an error 
+	elif [[ "${EUID}" -eq "0" ]];then
+		echo "access granted, welcome root."
+	fi
+}
+check_user
