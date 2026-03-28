@@ -5,6 +5,22 @@ Modes
 * `fd<file` Open and read, associate file to fd
 * `fd>file` Open and write in empty file
 * `fd>>file` Open and append to file
+Other operators
+```bash
+1> # Or 0> or 2> sends strems to a file
+&> # stdout & stderr to a file
+&>> # stdout & stdeer to a file (appending)
+command < input_file # attribute the file content to the command 
+```
+called here document/heredoc redirects multiple lines to a command 
+```bash
+command << EOF
+    line1
+    line2
+    line3
+EOF # EOF to mark beginning and end of lines
+```
+⚠️ `cd` or `echo` waits only argument, no standard entries (will not work)
 
 Open and read 
 ```bash
