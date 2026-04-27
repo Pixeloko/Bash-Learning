@@ -48,3 +48,10 @@ for arg in "$@"; do
     count=$((count+1))
 done
 ```
+
+### Generate a list of IP addresses
+```bash
+for ip in $(seq 1 254);do
+	echo "172.16.10.${ip}" >> addresses-samples.txt
+done
+```
