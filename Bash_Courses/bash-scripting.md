@@ -1,3 +1,6 @@
+## Shortcuts for kali linux VM (on mac)
+* anti-backlash : option + 8 
+
 # Scripting Commands
 ## Debugging
 `bash -n script.sh` Without executing, check for syntaxe, raise error

@@ -5,6 +5,8 @@ docker run -d --name <image> # run in background
 docker stop <container|$(docker ps -q)>
 ```
 
+run multiple containers with docker compose : `docker compose up -d`
+
 # Containers
 display informations
 ```bash
