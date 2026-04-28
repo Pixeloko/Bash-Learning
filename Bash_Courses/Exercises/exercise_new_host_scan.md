@@ -30,6 +30,6 @@ while true; do
                 -o tls=yes
         fi
     done
-    sleep 10
+    sleep 10 # interval between each scan
 done
 ```
