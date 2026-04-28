@@ -24,5 +24,5 @@ action # not to be debug
 ```bash
 brew install sendemail
 sendemail -f "sender-email" -t "reciever" -u "object" -m "message" -s "smtp.gmail.com:587" -xu "sende-email" -xp "key" -o tls=yes
-```
+```<
 to generate the key (Gmail) : Google Account > Activate double authentification > App passwords
