@@ -20,7 +20,7 @@ while true; do
         if ! grep -q "${host}" "${KNOWN_HOSTS}"; then # quiet grep
             echo "Found a new host : ${host}."
             echo "${host}" >> "${KNOWN_HOSTS}"
-            sudo sendemail -f "${FROM}" \
+            sudo sendemail -f "${FROM}" \ # can use another method (see below)
                 -t "${TO}" \
                 -u "ARP scan found new host" \
                 -m "New host detected : ${host}" \
@@ -32,4 +32,11 @@ while true; do
     done
     sleep 10 # interval between each scan
 done
+```
+send Discord notification
+```bash
+curl -H "Content-Type : application/json" \ # -H = Header of HTTP request
+-X POST \
+-d "{\"content\":\"New host found : ${host}\"}" \
+"<discord-server-webhook-url>"
 ```
