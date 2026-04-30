@@ -15,6 +15,11 @@ Place holder
 printf "192.10.10.%d\n" {1..254} # %d will be replaced by what's inside braces
 ```
 
+use ${} instead of "${}" when :
+* new assignation `old=${new}`
+* in condition `[[]]` 
+
+
 ### Input 
 `read -p "..." variable` with -p to show prompt and get the input together, then stock the response in the variable
 `read -r variable'` read and assign

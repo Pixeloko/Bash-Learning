@@ -33,6 +33,8 @@ while true; do
     sleep 10 # interval between each scan
 done
 ```
+Now that we know our host IP, let's find their [open ports](./3_scan_new_ports.sh)
+
 send Discord notification
 ```bash
 curl -H "Content-Type : application/json" \ # -H = Header of HTTP request
