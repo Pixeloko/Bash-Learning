@@ -6,7 +6,7 @@
 * `*`: One or more time the character ahead is repeated (ex: do*g => to match doooog or dog, \d\* to find 2 digits)
 * `\1`: backreference : a copy of the precedent character ((a)/1 = we search for 'aa')
 * `+` : If we are sure there are 2+ missing characters (ex: do+g), meaning : one or multiple character defined can appear
-* `?` : After a potential character (ex: colou?r => to get color and colour, <h1>(.\*?)<\/h1> to capture title and register it in group 1 ). ≠ With . because not greedy 
+* `?` : After a potential character (ex: colou?r => to get color and colour, <\h1>(.\*?)<\/h1> to capture title and register it in group 1 ). ≠ With . because not greedy 
 * `(?!)` : <u>Lookarounds (need parenthesis)</u>, not followed by ... (ex : \w(?!\s) : a word not followed by a white space)
 * `(?=)` : Followed by ... (<u> Positive lookahead</u>) (ex: matching line containing pwd : ^(?=.\*pwd).\*?$)
 * `|` : <u>Pipe</u> : to match two string (ex: red|white)
@@ -63,7 +63,7 @@ echo 'eeeAiiZuuuuAoooZeeee' | grep -E 'A.*Z' # Match AAiiZuuuuAoooZ
 * `.*?` : Match the minimal repetition of a any character (non-greedy)
 ```bash
 echo 'eeeAiiZuuuuAoooZeeee' | grep -E 'A.*?Z' # Match AiiZ
-echo 'eeeAiiZuuuuAoooZeeee' | grep -o 'A.*?Z' # Match AiiZ AND AoooZ
+echo 'eeeAiiZuuuuAoooZeeee' | grep -o 'A.*?Z' # Match AiiZ AND AoooZ, -o to display only the matching in the line
 ```
 
 ### Group capture with parenthesis
