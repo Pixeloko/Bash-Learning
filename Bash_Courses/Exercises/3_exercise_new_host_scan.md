@@ -42,3 +42,38 @@ curl -H "Content-Type : application/json" \ # -H = Header of HTTP request
 -d "{\"content\":\"New host found : ${host}\"}" \
 "<discord-server-webhook-url>"
 ```
+
+## Banner grabbing
+Scan IP on a given port and grab the banner of the service on that port.
+required : port + a list of host IP addresses
+```bash
+#!/bin/bash
+LIST="${1}"
+PORT="${2}"
+
+# condition before executing
+if [[ $# -ne 2 ]]; then # argument input
+    echo "${0} need two arguments <list> and <port>"
+    exit 1
+fi
+if [[ ! -f ${LIST} ]]; then
+    echo "${LIST} has not been found"
+    exit 1
+fi
+if [[ ! "${PORT}" =~ ^[0-9]+$ ]]; then
+    echo "${PORT} is not a valid port"
+    exit 1
+fi
+
+# start the banner grabbing
+while read -r ip; do
+    echo "Processing to a port scanning on address ${ip}"
+    result=$(nc -v "${ip}" -w 1 "${PORT}" 2>/dev/null)
+    if [[ -n "${result}" ]]; then
+        echo "==========="
+        echo "IP : ${ip}"
+        echo "Banner : ${result}"
+        echo "==========="
+    fi
+done < "${LIST}"
+```
