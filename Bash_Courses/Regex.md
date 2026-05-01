@@ -2,16 +2,16 @@
 
 ## Regex pattern 
 * `.` For missing letter (ex: c.t => display cat)
-* `^` <u>Caret</u> : sarting the line with (ex: ^ERROR), the opposite (end of line) : `$` (ex: log$). Or : "all except..." ([^\s]+ matches all except one or repeated white spaces)
-* `*`: One or more time the character ahead is repeated (ex: do*g => to match doooog or dog, \d\* to find 2 digits)
-* `\1`: backreference : a copy of the precedent character ((a)/1 = we search for 'aa')
-* `+` : If we are sure there are 2+ missing characters (ex: do+g), meaning : one or multiple character defined can appear
-* `?` : After a potential character (ex: colou?r => to get color and colour, <\h1>(.\*?)<\/h1> to capture title and register it in group 1 ). ≠ With . because not greedy 
+* `^` <u>Caret</u> : starting the line with (ex: ^ERROR), the opposite (end of line) : `$` (ex: log$). Or : "all except..." ([^\s]+ matches all except one or repeated white spaces)
+* `*`: Zero or more time the character ahead is repeated (ex: do*g => to match doooog or dog, \d* to find 2 digits)
+* `\1`: backreference : a copy of the precedent character (a)\1 = we search for 'aa')
+* `+` : If we are sure there are 1 or more missing characters (ex: do+g), meaning : one or multiple character defined can appear
+* `?` : After a potential character (ex: colou?r => to get color and colour, <h1>(.*?)<\/h1> to capture title and register it in group 1 ). ≠ With . because not greedy 
 * `(?!)` : <u>Lookarounds (need parenthesis)</u>, not followed by ... (ex : \w(?!\s) : a word not followed by a white space)
-* `(?=)` : Followed by ... (<u> Positive lookahead</u>) (ex: matching line containing pwd : ^(?=.\*pwd).\*?$)
-* `|` : <u>Pipe</u> : to match two string (ex: red|white)
+* `(?=)` : Followed by ... (<u> Positive lookahead</u>) (ex: matching line containing pwd : ^(?=.*pwd).*?$)
+* `|` : <u>Pipe</u> : to match (ex: red|white)
 * `[]`: A gathering of characters, meaning : "one character among them"
-* `{n}`: n = Minimum number of time we need to encounter the character define ahead. `{3,}` = two time of more, `{1,3}` = one to 2 
+* `{n}`: n = Minimum number of time we need to encounter the character define ahead. `{3,}` = three times of more, `{1,3}` = one to 3 
 * `\A`: Match the very start ≠ `\Z`
 
 ## Type of characters
@@ -38,11 +38,11 @@ if [[ "$url" =~ ^https?://([^/]+) ]];
 # First capture group containing one or more (+) characters which can be a to z, A to Z, 0 to 9, a point, an underscore, %, + or -
 # Then a @
 # Followed by one or more (+) a to z, A to Z, 0 to 9, a point or -
-# Then a point (escaped by /)
-# Ending by minimum (,) 2 str typed characters
+# Then a point (escaped by \)
+# Ending by minimum (,) 2 characters
 
 ^\+?[1-9][0-9]{7,14}$
-# Start with an optionnal +
+# Start with an optional +
 # Then, one digit included in 1 to 9 
 # Ending with 7 to 14 digits
 
@@ -56,7 +56,7 @@ if [[ "$url" =~ ^https?://([^/]+) ]];
 #### Difference between .* and .*? Greedy and lazy approaches
 * `.*` : Match any character (.) and all coming after (*), without consideration for what we need to match. Example :
 ```bash
-echo 'eeeAiiZuuuuAoooZeeee' | grep -E 'A.*Z' # Match AAiiZuuuuAoooZ
+echo 'eeeAiiZuuuuAoooZeeee' | grep -E 'A.*Z' # Match AiiZuuuuAoooZ
 # 1. Match A, and all coming after, up to the final e
 # 2. But the last character to match is Z, so the engine search for the last Z to display the final match
 ```
@@ -115,11 +115,9 @@ grep --color 'expression' file.txt # Color the findings
 grep -E # Grep Extended, including all meta-characters
 -i # Case insensitive
 ```
-
-### Using regex in Javascript
-To write regex in JS console, write is inside two `/here/`, after the second forward slash, add a flag.
+To write regex in JS console, write it inside two `/here/`, after the second forward slash, add a flag.
 * `gi` for global (g) (find all matches) and insensitive (i)
 
-### Additional ressources
+### Additional resources
 * [To test regex](https://regex101.com)
 * [Useful video](https://youtu.be/saABx34CsBE?si=A3b9ewQYNcnqHf6j)
