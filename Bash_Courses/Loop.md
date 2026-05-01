@@ -19,6 +19,10 @@ while [ condition ]; do
     actions
 done
 ```
+at the done of the loop, provide :
+* `<` a file
+* `<<` to read text within the script
+* `<<<` a string
 
 ## Until 
 ```bash

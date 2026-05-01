@@ -50,4 +50,11 @@ nmap -sV -iL <file-of-addresses> --open | grep open --exclude <ip-address>
 `nc -zv <ip-addr> <first-port>-<end-of-range-ports>`
 -z to not send data, -v for verbose
 
+banner grab with netcat or curl
+```bash
+nc <ip> -v port 
+curl --head <ip>:<port> # use curl for HTTP/HTTPS ports (more effetive and rich)
+```
+
+
 
