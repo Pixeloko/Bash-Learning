@@ -1,3 +1,5 @@
+## Scan file of urls and download their repertories/files
+```bash
 #!/bin/bash
 
 FILE="${1}"
@@ -25,4 +27,19 @@ while read -r line; do
         fi
     fi
 done < "${FILE}"
+```
 
+## Find directions and print returned HTTP code
+```bash
+TARGET="<ip>"
+FILE="robots.txt" # given directions for web crawlers
+
+while read -r line; do
+    path=$(echo "${line}" | awk -F'Disallow: ' '{print $2}')
+    if [[ -n "${path}" ]]; then
+        url="${TARGET}/${path}"
+        status=$(curl -s -o /dev/null -w "%{http_code}" "${url}")
+        echo "URL : ${path} --> CODE = ${status}"
+    fi
+done < <(curl -s "${TARGET}/${FILE}") # space between < because not here document
+```
