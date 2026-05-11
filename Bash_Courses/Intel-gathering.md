@@ -51,11 +51,17 @@ nmap -0 <ip> # operating system detection
 `nc -zv <ip-addr> <first-port>-<end-of-range-ports>`
 -z to not send data, -v for verbose
 
-banner grab with netcat or curl
+banner grab 
 ```bash
 nc <ip> -v port 
 curl --head <ip>:<port> # use curl for HTTP/HTTPS ports (more effetive and rich)
+nikto -host <ip> # banner grab and security check
 ```
 
+## whatweb
+```bash
+whatweb <ip> <ports> --log-json=<localization> --quiet | jq # services used on the we server, ouput in json format
+jq '[0].key.key.[0]' # navigation key/value with jq
+```
 
 
