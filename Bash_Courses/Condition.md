@@ -23,6 +23,7 @@ fi
 ### Examples of conditions
 ```bash
 [[ -z STRING ]] # Empty string
+[[ -s STRING ]] # size greater than zero
 [[ -n STRING ]] # Not empty string
 [[ STRING1 ≠ STRING2 ]] # Not empty string
 [[ STRING1 == STRING2 ]] 
