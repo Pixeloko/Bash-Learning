@@ -114,7 +114,15 @@ Create non-capture group to use alternatives `(?:...)`, example :
 grep --color 'expression' file.txt # Color the findings
 grep -E # Grep Extended, including all meta-characters
 -i # Case insensitive
+-oP word # anything after the word
 ```
+
+### Output commands
+```bash
+sort -u # remove duplicate line
+trim -d 'element-to-be-deleted' # trim element
+```
+
 To write regex in JS console, write it inside two `/here/`, after the second forward slash, add a flag.
 * `gi` for global (g) (find all matches) and insensitive (i)
 

@@ -55,13 +55,28 @@ banner grab
 ```bash
 nc <ip> -v port 
 curl --head <ip>:<port> # use curl for HTTP/HTTPS ports (more effetive and rich)
-nikto -host <ip> # banner grab and security check
+nikto -host <ip> # banner grab and security check and find dir/file
 ```
 
 ## whatweb
 ```bash
 whatweb <ip> <ports> --log-json=<localization> --quiet | jq # services used on the we server, ouput in json format
 jq '[0].key.key.[0]' # navigation key/value with jq
+```
+
+# File system
+## dirsearch 
+```bash
+dirsearch -u http://<ip> # more efficient than nikto to find hidden dir/file (brute-forcing)
+```
+if found .git -> download repositories
+```bash
+gitjacker http://<ip>/path/file.git -o <new-dir> 
+```
+cd to the new directory and `git log` to show commit info (author name and email)
+if multiple contributors/commits : 
+```bash
+git log --pretty-format="%an%ae" # an=author's name ae=email
 ```
 
 
