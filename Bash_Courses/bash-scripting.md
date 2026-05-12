@@ -21,5 +21,18 @@ action # not to be debug
 ```bash
 brew install sendemail
 sendemail -f "sender-email" -t "reciever" -u "object" -m "message" -s "smtp.gmail.com:587" -xu "send-email" -xp "key" -o tls=yes
-```<
+```
 to generate the key (Gmail) : Google Account > Activate double authentification > App passwords
+
+## Nuclei
+stored template at ~/.local/nuclei-templates
+```bash
+nuclei -u <BaseUrl> -t <path-to-template> # first run will install official templates if not downloaded yet
+nuclei -tags <tag>,<tag> -u ip # run specific template
+```
+output syntax : [template][protocol][severity] url [extractor]
+
+## Fuff
+```bash
+fuff - -w wordlist.txt -u <http://...>/FUZZ # -c color, FUZZ will be replaced by wordlist entry
+```
