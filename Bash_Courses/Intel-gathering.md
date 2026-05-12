@@ -24,6 +24,9 @@ done < "${FILE}"
 or do `nmap -sn <network-address/cidr>` (-sn = ping sweep)
 
 # Tools
+## nuclei
+[find official templates](https://github.com/projectdiscovery/nuclei-templates/tree/main)
+
 ## arp-scan
 find MAC with ARP-SCAN 
 ```bash
