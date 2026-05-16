@@ -21,7 +21,7 @@ use ${} instead of "${}" when :
 
 
 ### Input 
-`read -p "..." variable` with -p to show prompt and get the input together, then stock the response in the variable
+`read -p '...' variable` with -p to show prompt and get the input together, then stock the response in the variable
 `read -r variable'` read and assign
 
 execute the bash-script with pre-set inputs
