@@ -115,6 +115,7 @@ grep --color 'expression' file.txt # Color the findings
 grep -E # Grep Extended, including all meta-characters
 -i # Case insensitive
 -oP word # anything after the word
+grep -Po # -P use Perl advanced option, -o only match
 ```
 
 ### Output commands

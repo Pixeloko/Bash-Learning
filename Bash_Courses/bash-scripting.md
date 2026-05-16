@@ -32,7 +32,8 @@ nuclei -tags <tag>,<tag> -u ip # run specific template
 ```
 output syntax : [template][protocol][severity] url [extractor]
 
-## Fuff
+## Fuff / Fuzzing
 ```bash
 fuff - -w wordlist.txt -u <http://...>/FUZZ # -c color, FUZZ will be replaced by wordlist entry
+wfuzz -sc <http-code> <wordlist.txt> <http://ip:port> # recieve only for this code
 ```

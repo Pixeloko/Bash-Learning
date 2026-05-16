@@ -7,3 +7,4 @@
 * `sudo dhcpcd eth0` ask for IP to connect to Internet
 * `sudo sh -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'` DNS resolver, use Google
 * `apt list --installed | grep <tool>`
+* wget <url/file>

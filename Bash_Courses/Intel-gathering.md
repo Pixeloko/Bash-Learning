@@ -48,6 +48,7 @@ nmap -sV -p <port>,<port> <ip-adrr> #-sV to find version of services used in eac
 nmap <ip|website> <another> # fin MAC and open ports, 
 nmap -sV -iL <file-of-addresses> --open | grep open --exclude <ip-address>
 nmap -0 <ip> # operating system detection
+nmap --script=<name-script> <ip-targetted> # list found at /usr/share/nmap/scripts
 ```
 
 ## netcat
