@@ -62,6 +62,20 @@ curl --head <ip>:<port> # use curl for HTTP/HTTPS ports (more effetive and rich)
 nikto -host <ip> # banner grab and security check and find dir/file
 ```
 
+## curl
+```bash
+curl -w "<format>" url # get info on the response
+```
+format :
+* `%{http_code}`
+* `%{size_download}`
+* `%{speed_download}`
+* `%{time_total}`
+We can also use a file for format
+````bash
+curl -w @format.txt -o /dev/null -s url # -o output -s silence
+```
+
 ## whatweb
 ```bash
 whatweb <ip> <ports> --log-json=<localization> --quiet | jq # services used on the we server, ouput in json format

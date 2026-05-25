@@ -54,7 +54,7 @@ slicing
 ```bash
 name = "Bob"
 echo "${name:0:2}" # Take letter from position 0 to 2
-echo "${name:-1}" # Cut the last letter (display Bo)
+echo "${name:-1}" # Print the last letter
 echo "${name:(-1)}" # Slice from right (display b)
 ```
 
@@ -71,3 +71,27 @@ calculation
 `${#ARRAY[1]}` Access a specifi position
 `{1..5}` int range
 `$(seq 1 10)` range int list
+
+# Characters and URL encoding
+|Characters|URL Encoding|
+|:---:|:---:|
+|space|%20|
+|/|%2F|
+|?|%3F|
+|&|%26|
+|=|%3D|
+|:|%3A|
+|;|%3B|
+|#|%23|
+|+|%2B|
+|,|%2C|
+
+# Placeholders
+* `%s`string
+* `%d`integer
+* `%f`float
+* `%b`binary
+* `%x`hexa
+usage 
+```bash
+printf("Text with %placeholder", $variable)

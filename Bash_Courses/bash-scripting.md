@@ -11,10 +11,12 @@ set -x # debug begin
 set +x # debug end
 action # not to be debug
 ```
- f
+
 ## Operators
-`[command] &` send the command to the background
-`([command1];[command2])` () group commands as one ; wait for the first to finish after the second gets executed (no matter if True or False)
+* `[command] &` send the command to the background
+* `([command1];[command2])` () group commands as one ; wait for the first to finish after the second gets executed (no matter if True or False)
+* `command1 && command2` executes only if first succeeded 
+* `cmd1 || cmd2` executes if the first failed
 
 # Tools
 ## Send email in the terminal with sendemail

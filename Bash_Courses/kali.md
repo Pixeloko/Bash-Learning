@@ -8,3 +8,9 @@
 * `sudo sh -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'` DNS resolver, use Google
 * `apt list --installed | grep <tool>`
 * `wget` <url/file>
+* `alias <name>='./script arg1 arg2'` will be temporary
+* `echo "alias name='./script arg1 arg2'" >> ~/.bashrc ; source ~/.bashrc` make it permanent, source to reload
+
+## Distinction printf and print
+printf is more formatted and controls decimals
+
