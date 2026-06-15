@@ -11,6 +11,11 @@
 * `alias <name>='./script arg1 arg2'` will be temporary
 * `echo "alias name='./script arg1 arg2'" >> ~/.bashrc ; source ~/.bashrc` make it permanent, source to reload
 * `nohup ./[script] [redirections] & rm nohup.out` run even if terminal closed, delete default filee creation
+* `xargs` transforms an input into argument 
+Exemple : 
+```bash
+docker ps -q | xargs docker inspect 
+```
 
 ## Distinction printf and print
 printf is more formatted and controls decimals
