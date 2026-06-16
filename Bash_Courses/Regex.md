@@ -116,6 +116,13 @@ grep -E # Grep Extended, including all meta-characters
 -i # Case insensitive
 -oP word # anything after the word
 grep -Po # -P use Perl advanced option, -o only match
+grep -q # quiet
+```
+
+### Use awk
+```bash
+awk -F'separator' '{print $1,$2}' # syntax
+awk -F'separator' '{if (condition) {print $1}}' file # with condition
 ```
 
 ### Output commands

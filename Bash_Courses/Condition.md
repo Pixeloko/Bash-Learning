@@ -37,6 +37,7 @@ fi
 # And same, for greater, replace with a 'g'
 [[ "string" =~ pattern ]] # Check if a string match a regexp pattern
 [[ -e file ]] # verify the file exists (use with if)
+[[ -r "/file.txt" ]] # file readable 
 ```
 
 *to test multiple conditions use `&&` and `||` between each [[single condition]]*

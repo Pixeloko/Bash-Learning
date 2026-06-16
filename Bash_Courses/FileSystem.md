@@ -1,3 +1,34 @@
+# Filesystem
+
+| / | description |
+|------|---------------------------------|
+| /var | non static files (app logfiles) |
+|/etc  | config files and info (pass)    |
+|/bin /sbin  | binary utilities and system binaries|
+|/dev  | access to device files (external drive, disk manipulation)|
+|/proc | processes PID|
+|/usr  | user binaries, man              |
+|/opt  | directory for software applications|
+|/lib /lib32 /lib64  | shared librairies containing function used by multiple programms|
+
+in `etc/passwd` : account:psswd:UID:GID:comment:homedirectory:defaultshell
+
+## /etc
+default settings for new user with adduser located in `/etc/adduser.conf` or/and `/etc/default/useradd`
+
+## /proc
+|path|contains|
+|---|---|
+|/proc<pid>/cmdline|command to start the process|
+|/proc/<pid>/cwd|working directory of the process|
+|/proc/<pid>/environ|environment variables of the process|
+|/proc/<pid>/exe|binary that start the process|
+|/proc/<pid>/task|subdirectories for each thread started by the process|
+|/proc/<pid>/status||
+|/proc/<pid>/fd|file descriptors, describes open files|
+
+*/proc/<path> for kernel settings ≠ /proc/pid/<path> for one specific process*
+
 ## Operators to check on files and diretories
 ### Display a boolean
 
