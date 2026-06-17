@@ -2,7 +2,7 @@
 
 | / | description |
 |------|---------------------------------|
-| /var | non static files (app logfiles) |
+|/var | non static files (app logfiles) |
 |/etc  | config files and info (pass)    |
 |/bin /sbin  | binary utilities and system binaries|
 |/dev  | access to device files (external drive, disk manipulation)|
@@ -14,12 +14,13 @@
 in `etc/passwd` : account:psswd:UID:GID:comment:homedirectory:defaultshell
 
 ## /etc
-default settings for new user with adduser located in `/etc/adduser.conf` or/and `/etc/default/useradd`
+* default settings for new user with adduser located in `/etc/adduser.conf` or/and `/etc/default/useradd`
+* `/etc/os-release`
 
 ## /proc
 |path|contains|
 |---|---|
-|/proc<pid>/cmdline|command to start the process|
+|/proc/<pid>/cmdline|command to start the process|
 |/proc/<pid>/cwd|working directory of the process|
 |/proc/<pid>/environ|environment variables of the process|
 |/proc/<pid>/exe|binary that start the process|

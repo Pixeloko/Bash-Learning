@@ -16,6 +16,8 @@ Exemple :
 ```bash
 docker ps -q | xargs docker inspect 
 ```
+* `tr 'search' 'subtitution'` means translate
+* `eval` execute a command stocked in a char, interpreting pipe etc
 
 ## Distinction printf and print
 printf is more formatted and controls decimals

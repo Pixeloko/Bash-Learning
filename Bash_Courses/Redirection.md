@@ -38,3 +38,9 @@ Copy the destination of stdout to stderr (output and erros diplayed in terminal)
 syntax : target>&source
 
 `echo Done` output back to original stdout
+
+# Notifications
+## Toward Discord 
+```bash
+curl -H 'Content-type: <content-type>' -X POST -d '{"content" : "<message>"}' <URL_WEBHOOK>
+```

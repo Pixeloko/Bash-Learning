@@ -72,8 +72,9 @@ format :
 * `%{speed_download}`
 * `%{time_total}`
 We can also use a file for format
-````bash
+```bash
 curl -w @format.txt -o /dev/null -s url # -o output -s silence
+curl -H <metadata> <url> # to specify (ex: Content type)
 ```
 
 ## whatweb
@@ -97,4 +98,7 @@ if multiple contributors/commits :
 git log --pretty-format="%an%ae" # an=author's name ae=email
 ```
 
-
+# Network
+```bash
+hostname -I # os ip
+```
