@@ -9,6 +9,7 @@ declare -A commands=(
     [OS_name]="uname -o"
     [processor]="uname -p"
     [kernel_version_date]="uname -v | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}'"
+    [distribution]="cat /etc/os-release 2>/dev/null || cat /etc/*-release 2>/dev/null || cat /etc/issue 2>/dev/null || echo 'not found'"
     [architecture]="arch"
     [user_name]="whoami"
     [os_ip]="hostname -I | tr ' ' '\n'"
@@ -24,9 +25,10 @@ for key in "${!commands[@]}"; do
     output=$(eval "$cmd" 2>&1)
     if [[ $? -ne 0 ]]; then
         echo "Error on ${key} : ${cmd}"
-        echo "Detail ${output}"
+        status="ERROR"
+    else status="OK"
     fi
-    results[$key]="$output"
+    results[$key]="${output} - ${status}"
 done
 
 # notify
@@ -54,3 +56,5 @@ JSON_PAYLOAD=$(jq -n --arg msg "$MESSAGE" '{
   }]
 }')
 curl -H "Content-Type: application/json" -X POST -d "$JSON_PAYLOAD" "$WEBHOOK"
+
+exit 0
