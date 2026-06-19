@@ -1,4 +1,11 @@
 # Scripting Commands
+## Display
+```bash
+sort # numerical/alphabetical order
+uniq # no duplicate
+tail -n +2 # jumps over one line
+```
+
 ## Debugging
 `bash -n script.sh` Without executing, check for syntaxe, raise error
 `bash -x script.sh`Execute with verbose on

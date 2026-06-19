@@ -123,6 +123,14 @@ grep -q # quiet
 ```bash
 awk -F'separator' '{print $1,$2}' # syntax
 awk -F'separator' '{if (condition) {print $1}}' file # with condition
+awk '<searched> { print f } {f=$<id>}' <file> # space is the default separator, execute awk only on line containing <searched>
+awk -F'[<another-separator]' '$1 == "<searched>" { print $2 }' # bracket to searched both space and another separator, if condition : print
+awk '$1 ~"<searched>" { print $2 }' # partial match
+```
+
+### Use find
+```bash
+find / -name "<graal>" -type f # searching file (-type f) case-sensitive (/)
 ```
 
 ### Output commands

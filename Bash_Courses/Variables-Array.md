@@ -95,3 +95,9 @@ calculation
 usage 
 ```bash
 printf("Text with %placeholder", $variable)
+```
+
+# Hexadecimals
+```bash
+echo $((16#<hex>)) # convert hexadecimals (base16) into decimals
+```

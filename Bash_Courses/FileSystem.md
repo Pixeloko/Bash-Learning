@@ -11,11 +11,15 @@
 |/opt  | directory for software applications|
 |/lib /lib32 /lib64  | shared librairies containing function used by multiple programms|
 
-in `etc/passwd` : account:psswd:UID:GID:comment:homedirectory:defaultshell
+## /sys/
+* find network interfaces in `/sys/class/net` do `ls -l` to see if it is physical interface or `/sys/devices/virtual/net`
+* MAC address : `/sys/class/net/<interface>/address`
 
 ## /etc
 * default settings for new user with adduser located in `/etc/adduser.conf` or/and `/etc/default/useradd`
 * `/etc/os-release`
+* in `etc/passwd` : account:psswd:UID:GID:comment:homedirectory:defaultshell
+* `/etc/resolv.conf` find DNS server config (nameserver)
 
 ## /proc
 |path|contains|
@@ -27,8 +31,14 @@ in `etc/passwd` : account:psswd:UID:GID:comment:homedirectory:defaultshell
 |/proc/<pid>/task|subdirectories for each thread started by the process|
 |/proc/<pid>/status||
 |/proc/<pid>/fd|file descriptors, describes open files|
+|/proc/net/route|gateway of interfaces|
+|/proc/net/tcp|socket table|
+|/proc/partitions|storage info or run `df -h -T`|
 
 */proc/<path> for kernel settings ≠ /proc/pid/<path> for one specific process*
+
+## /var
+* `/var/log` applications logs
 
 ## Operators to check on files and diretories
 ### Display a boolean

@@ -1,3 +1,10 @@
+## User
+```bash
+who # login of the current session
+last # logins
+history # commands
+```
+
 ## Subdomains
 Generate list of subdomains for a domain. Wordlist of subdomains required
 ```bash
@@ -61,6 +68,9 @@ nc <ip> -v port
 curl --head <ip>:<port> # use curl for HTTP/HTTPS ports (more effetive and rich)
 nikto -host <ip> # banner grab and security check and find dir/file
 ```
+
+## netstat
+`netstat -atnup` shows active internet connections with protocols and PID programs
 
 ## curl
 ```bash
