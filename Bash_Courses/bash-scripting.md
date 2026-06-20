@@ -98,7 +98,7 @@ crontab -e # open a crontab edit file to append script to automatize
 * * * * * <command> >> /tmp/file.log # handle the output
 ```
 nb of * depends when to execute :
-* `* * * * *` every minutes (`*/5 * * * *`for every five minutes)
+* `* * * * *` every minutes (`*/5 * * * *`for every five minutes, `5 * * * *` each 05 of each hours)
 * `0 * * * * ` every hours
 * `0 0 * * * ` every days (of the month)
 * `0 0 1 * * ` every month

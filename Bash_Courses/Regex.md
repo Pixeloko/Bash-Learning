@@ -117,6 +117,7 @@ grep -E # Grep Extended, including all meta-characters
 -oP word # anything after the word
 grep -Po # -P use Perl advanced option, -o only match
 grep -q # quiet
+grep -r "<search>" /directory # recursive search (look inside file of the directory)
 ```
 
 ### Use awk
