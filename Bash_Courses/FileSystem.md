@@ -14,6 +14,7 @@
 ## /sys/
 * find network interfaces in `/sys/class/net` do `ls -l` to see if it is physical interface or `/sys/devices/virtual/net`
 * MAC address : `/sys/class/net/<interface>/address`
+* `/sys/class/dmi/id` Desktop Management Interface details about pc components (bios, chassis, board game)
 
 ## /etc
 * default settings for new user with adduser located in `/etc/adduser.conf` or/and `/etc/default/useradd`

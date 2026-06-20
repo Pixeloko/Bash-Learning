@@ -4,7 +4,10 @@ who # login of the current session
 last # logins
 history # commands
 uname # system info
+dmesg # kernel ring buffer (events info)
 ```
+
+the file in `home/<user>/tools/LinEnum.sh` automates collections of data about host. Upload on target.
 
 ## Subdomains
 Generate list of subdomains for a domain. Wordlist of subdomains required
