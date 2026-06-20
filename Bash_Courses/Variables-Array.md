@@ -32,6 +32,7 @@ echo "${1}"
 echo "${2}" 
 # execute the file 
 ./bash-script hello world # 0=name of the file 1=hello 2=world
+dir_search="${1:-<default-value>}" # argument if passed or default-value
 ```
 `${#}` For the number of arguments passed when executing the bash script
 
