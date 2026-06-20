@@ -20,6 +20,18 @@
 * `/etc/os-release`
 * in `etc/passwd` : account:psswd:UID:GID:comment:homedirectory:defaultshell
 * `/etc/resolv.conf` find DNS server config (nameserver)
+* `/etc/cron.allow` users registered able to create scheduled tasks, same for /etc/at.allow and at.deny
+
+Configuration File in servers
+
+|Server types|File localization|
+|------------|-----------------|
+| Web servers | /etc/httpd/httpd.conf <br> /etc/httpd/conf/httpd.conf <br> /etc/apache2/apache2.conf <br> /etc/lighttpd/lighttpd.conf <br> /etc/nginx/nginx.conf |
+| File-sharing/transfer | /etc/vsftpd/vsftpd.conf <br> /etc/protftpd.conf <br> /usr/local/etc/proftpd.conf <br> /etc/samba/smb.conf|
+|Databases | /etc/mysql/my.cnf <br> /etc/my.cnf <br> /etc/redis/redis.conf <br> /etc/mongo.conf <br> /etc/cassandra|
+| DNS | /etc/bind/named.conf <br> /etc/dnsmasq.conf|
+|Mail| etc/postfix/main.cf <br> /etc/mail/sendmail.cf <br> /etc/dovecot/dovecot.conf|
+|VPN server | /etc/openvpn <br> /etc/ipsec.conf|
 
 ## /proc
 |path|contains|
@@ -39,6 +51,9 @@
 
 ## /var
 * `/var/log` applications logs
+* `/var/spool/cron/crontab/<user>` cron config
+* `/var/cron*`system cron files
+* `/var/spool/cron/atjobs` find jobs created with at. Also 
 
 ## Operators to check on files and diretories
 ### Display a boolean

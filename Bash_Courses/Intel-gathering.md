@@ -3,6 +3,7 @@
 who # login of the current session
 last # logins
 history # commands
+uname # system info
 ```
 
 ## Subdomains
