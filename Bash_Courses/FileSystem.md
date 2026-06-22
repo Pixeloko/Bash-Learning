@@ -19,9 +19,11 @@
 ## /etc
 * default settings for new user with adduser located in `/etc/adduser.conf` or/and `/etc/default/useradd`
 * `/etc/os-release`
-* in `etc/passwd` : account:psswd:UID:GID:comment:homedirectory:defaultshell
+* in `etc/passwd` : list users : account:psswd:UID:GID:comment:homedirectory:defaultshell
+* `/etc/group`
 * `/etc/resolv.conf` find DNS server config (nameserver)
 * `/etc/cron.allow` users registered able to create scheduled tasks, same for /etc/at.allow and at.deny
+* `/etc/ssh` stores keys (ssh_host_ecdsa_key, ssh_host_rsa_key,ssh_host_ed25519_key, ssh_host_ecdsa_key.pub, ssh_host_rsa_key.pub, or ssh_host_ed25519_key.pub) 
 
 Configuration File in servers
 
@@ -56,6 +58,11 @@ Configuration File in servers
 * `/var/cron*`system cron files
 * `/var/spool/cron/atjobs` find jobs created with at. Also 
 
+# Commands
+```bash
+stat file # display info on the status
+```
+
 ## Operators to check on files and diretories
 ### Display a boolean
 
@@ -88,3 +95,11 @@ sed 's/find/substitution' file > tmp && mv tmp file # rename (and overwrite) to 
 
 *attribute file content to a command*
 `command < file` # usually using sort, wc -l see more in [redirection](/Bash_Courses/Redirection.md)
+
+### Use find
+```bash
+find / -name "<graal>" -type f # searching file (-type f) case-sensitive (/)
+find <root> -perm -o=wx 2> /dev/null # find per permission
+find <root> -perm -2000 2> /dev/null # find SUID files
+find . -exec grep <match> {} \; # -exec \ to execute a command for each find, {} placeholder of the path of found file (for grep)
+```

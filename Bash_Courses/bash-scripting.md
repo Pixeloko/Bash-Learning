@@ -112,3 +112,9 @@ at <time-repetition> # example : now + 1 minute, 11pm, tomorrow...
 atq # see running jobs
 atrm <id> # remove
 ```
+
+# Privilege escalation
+## PATH
+1. `cp /bin/<commmand> /tmp/<user-dir>`to create a fake command (cat->ls)
+2. `export PATH=/tmp/<user-dir>:$PATH` in script to make read our path first:real one second
+will be executed on SUID right file (user can execute with owner's privilege)

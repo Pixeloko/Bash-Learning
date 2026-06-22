@@ -118,6 +118,8 @@ grep -E # Grep Extended, including all meta-characters
 grep -Po # -P use Perl advanced option, -o only match
 grep -q # quiet
 grep -r "<search>" /directory # recursive search (look inside file of the directory)
+grep -i "match1\|match2\|match3" # non case-sensitive
+grep -- "-----BEGIN" # -- = end of options, everything after is argument
 ```
 
 ### Use awk
@@ -127,11 +129,6 @@ awk -F'separator' '{if (condition) {print $1}}' file # with condition
 awk '<searched> { print f } {f=$<id>}' <file> # space is the default separator, execute awk only on line containing <searched>
 awk -F'[<another-separator]' '$1 == "<searched>" { print $2 }' # bracket to searched both space and another separator, if condition : print
 awk '$1 ~"<searched>" { print $2 }' # partial match
-```
-
-### Use find
-```bash
-find / -name "<graal>" -type f # searching file (-type f) case-sensitive (/)
 ```
 
 ### Output commands

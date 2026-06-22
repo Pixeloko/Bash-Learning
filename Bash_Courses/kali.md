@@ -1,3 +1,7 @@
+# Lexicon
+- ==Option== modifies the command
+- ==Argument== passes data to the command
+
 ## Shortcuts for kali linux VM (on mac)
 * anti-backlash : option + 8 
 * pipeline : option + 6
@@ -22,4 +26,17 @@ docker ps -q | xargs docker inspect
 
 ## Distinction printf and print
 printf is more formatted and controls decimals
+
+# Remote access
+## With SSH
+`ssh username@host`
+
+# Security
+```bash
+gpg --generate-key # will store in ~/<user>/.gnupg
+gpg --encrypt file
+gpg --decrypt file
+gpg --sign file
+gpg -k # list key
+```
 
