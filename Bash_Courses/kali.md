@@ -23,6 +23,8 @@ docker ps -q | xargs docker inspect
 * `tr 'search' 'subtitution'` means translate
 * `eval` execute a command stocked in a char, interpreting pipe etc
 * `dpkg -l` list packages
+* `sudo vi` > `:!bash` launch a bash shell with root right (the user who launch vi) 
+* `passwd` change the password of the actual 
 
 ## Distinction printf and print
 printf is more formatted and controls decimals
@@ -41,5 +43,4 @@ gpg --sign file
 gpg -k # list key
 gpg --output file.pgp --armor --export-secret-key <mail-or-id> # export private key (associated to id/mail) to a file, in ASCII (readable)
 ```
-if there is a passphrase, need to trick to export (see exercise 16)
 

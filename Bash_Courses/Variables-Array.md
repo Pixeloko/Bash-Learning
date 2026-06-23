@@ -1,4 +1,9 @@
 # Variables
+## Environment variables
+```bash
+$PATH # binaries locations acccessible by all programs
+```
+
 ### Assign command to variable 
 ```bash
 LINUX_COMMAND=$(uname)

@@ -24,6 +24,7 @@
 * `/etc/resolv.conf` find DNS server config (nameserver)
 * `/etc/cron.allow` users registered able to create scheduled tasks, same for /etc/at.allow and at.deny
 * `/etc/ssh` stores keys (ssh_host_ecdsa_key, ssh_host_rsa_key,ssh_host_ed25519_key, ssh_host_ecdsa_key.pub, ssh_host_rsa_key.pub, or ssh_host_ed25519_key.pub) 
+* `/etc/sudoers` sudo privileges configurations, can include independent config from /etc/sudoers.d
 
 Configuration File in servers
 
