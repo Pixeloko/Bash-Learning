@@ -35,8 +35,11 @@ printf is more formatted and controls decimals
 ```bash
 gpg --generate-key # will store in ~/<user>/.gnupg
 gpg --encrypt file
+gpg --encrypt --passphrase "<passphrase>" <file>
 gpg --decrypt file
 gpg --sign file
 gpg -k # list key
+gpg --output file.pgp --armor --export-secret-key <mail-or-id> # export private key (associated to id/mail) to a file, in ASCII (readable)
 ```
+if there is a passphrase, need to trick to export (see exercise 16)
 
