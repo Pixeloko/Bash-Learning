@@ -32,7 +32,9 @@ while read -r host; do
 	fi
 done < "${FILE}" 
 ```
-or do `nmap -sn <network-address/cidr>` (-sn = ping sweep)
+* Or do `nmap -sn <network-address/cidr>` (-sn = ping sweep)
+
+* Use [Mimipenguin](https://github.com/huntergregal/mimipenguin/blob/master/mimipenguin.py) to find hosts credentials, requires to be root
 
 # Tools
 ## nuclei
@@ -120,3 +122,6 @@ git log --pretty-format="%an%ae" # an=author's name ae=email
 ```bash
 hostname -I # os ip
 ```
+
+# Other useful ressources
+* [Bashark](https://github.com/redcode-labs/Bashark/blob/master/bashark.sh) offensive security helper

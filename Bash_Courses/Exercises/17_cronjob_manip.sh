@@ -11,3 +11,4 @@ setfacl -m u:user-test:rwx /var/log
 mkdir /home/user-test/found
 cp -r /home/jmartinez/. /home/user-test/found   
 chmod u+r /home/user-test/found 
+
