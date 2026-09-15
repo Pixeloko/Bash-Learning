@@ -2,6 +2,7 @@
 ```bash
 docker ps # list runnning containers
 docker run -d --name <image> # run in background
+docker run --tty --interactive <image> # run in terminal the image
 docker stop <container|$(docker ps -q)>
 ```
 

@@ -13,7 +13,7 @@
 * `apt list --installed | grep <tool>`
 * `wget` <url/file>
 * `alias <name>='./script arg1 arg2'` will be temporary
-* `echo "alias name='./script arg1 arg2'" >> ~/.bashrc ; source ~/.bashrc` make it permanent, source to reload
+* `echo "alias name='./script arg1 arg2'" >> ~/.bashrc ; source ~/.bashrc` make it permanent, source to reload (read + execute)
 * `nohup ./[script] [redirections] & rm nohup.out` run even if terminal closed, delete default filee creation
 * `xargs` transforms an input into argument 
 Exemple : 

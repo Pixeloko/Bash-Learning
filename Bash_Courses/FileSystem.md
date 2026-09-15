@@ -19,7 +19,7 @@
 ## /etc
 * default settings for new user with adduser located in `/etc/adduser.conf` or/and `/etc/default/useradd`
 * `/etc/os-release`
-* in `etc/passwd` : list users : account:psswd:UID:GID:comment:homedirectory:defaultshell
+w* in `etc/passwd` : list users : account:psswd:UID:GID:comment:homedirectory:defaultshell
 * `/etc/group`
 * `/etc/resolv.conf` find DNS server config (nameserver)
 * `/etc/cron.allow` users registered able to create scheduled tasks, same for /etc/at.allow and at.deny

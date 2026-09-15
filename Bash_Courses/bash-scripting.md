@@ -25,6 +25,9 @@ action # not to be debug
 * `command1 && command2` executes only if first succeeded 
 * `cmd1 || cmd2` executes if the first failed
 
+## Execution
+* `timeout 0.2 <command>` dash for 'Exit status otherwise'
+
 # Tools
 ## Send email in the terminal with sendemail
 ```bash
@@ -96,6 +99,7 @@ find / -type f
 crontab -e # open a crontab edit file to append script to automatize
 * * * * * /path/to/script.sh # execute the script every minutes
 * * * * * <command> >> /tmp/file.log # handle the output
+* * * * * <user> <command-or-file> #can specify who we want to run
 ```
 nb of * depends when to execute :
 * `* * * * *` every minutes (`*/5 * * * *`for every five minutes, `5 * * * *` each 05 of each hours)
@@ -118,3 +122,4 @@ atrm <id> # remove
 1. `cp /bin/<commmand> /tmp/<user-dir>`to create a fake command (cat->ls)
 2. `export PATH=/tmp/<user-dir>:$PATH` in script to make read our path first:real one second
 will be executed on SUID right file (user can execute with owner's privilege)
+or `PATH=.:$PATH` to search binaries first in the current repertory 

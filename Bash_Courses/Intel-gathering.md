@@ -3,7 +3,7 @@
 who # login of the current session
 last # logins
 history # commands
-uname # system info
+uname # system info -r (release) -v (version)
 dmesg # kernel ring buffer (events info)
 ```
 
@@ -96,6 +96,10 @@ curl -H <metadata> <url> # to specify (ex: Content type)
 whatweb <ip> <ports> --log-json=<localization> --quiet | jq # services used on the we server, ouput in json format
 jq '[0].key.key.[0]' # navigation key/value with jq
 ```
+
+## searchsploit
+intel on exploit-db to search for kernel vulnerabilities
+`searchsploit linux kernel | grep -i "<name>"`
 
 # File system
 ## dirsearch 
