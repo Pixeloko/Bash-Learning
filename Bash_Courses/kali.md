@@ -45,4 +45,4 @@ gpg -k # list key
 gpg --output file.pgp --armor --export-secret-key <mail-or-id> # export private key (associated to id/mail) to a file, in ASCII (readable)
 ssh-keygen -t rsa -C "" # -t type and -C empty not to inform about our computer's hostname at the end of the key (default)
 ```
-
+   
