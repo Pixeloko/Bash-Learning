@@ -27,6 +27,20 @@ docker ps -q | xargs docker inspect
 * `sudo vi` > `:!bash` launch a bash shell with root right (the user who launch vi) 
 * `passwd` change the password of the actual 
 
+## Execute / Clean
+`timeout 3 <command>`
+`trap <action> <condition>` execute something for one condition, example : `trap 'echo "You pressed Ctrl+C, Exiting..."; exit 130' SIGINT`
+|CONDITIONS|DESCRIPTION|
+|---|----|
+|EXIT||
+|SIGINT|when hit Ctrl+C|
+|SIGTERM|hit kill command|
+|SIGHUP|terminal closes or process disconnected|
+|ERR|command receives a non-zero exit status|
+|DEBUG|<action> is executed before every command|
+|RETURN|<action> executed each time a function or script is executed|
+
+
 ## Distinction printf and print
 printf is more formatted and controls decimals
 

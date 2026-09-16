@@ -79,6 +79,7 @@ nikto -host <ip> # banner grab and security check and find dir/file
 `netstat -atnup` shows active internet connections with protocols and PID programs
 
 ## curl
+[cheatsheet](https://devhints.io/curl)
 ```bash
 curl -w "<format>" url # get info on the response
 ```

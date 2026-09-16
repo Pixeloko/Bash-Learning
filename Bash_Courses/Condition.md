@@ -20,6 +20,18 @@ else
 fi
 ```
 
+cases condition
+```
+case "${BASH_COMMAND}" in
+    mysql*)
+        ...
+    ;;
+    curl*) 
+        ...
+    esac
+```
+
+
 ### Examples of conditions
 ```bash
 [[ -z STRING ]] # Empty string
@@ -41,3 +53,4 @@ fi
 ```
 
 *to test multiple conditions use `&&` and `||` between each [[single condition]]*
+
