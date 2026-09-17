@@ -131,6 +131,13 @@ awk -F'[<another-separator]' '$1 == "<searched>" { print $2 }' # bracket to sear
 awk '$1 ~"<searched>" { print $2 }' # partial match
 ```
 
+### sed command
+find and substitute
+```bash
+sed 's/word/replacement/g' # g for global = replace all occurrences
+```
+
+
 ### Output commands
 ```bash
 sort -u # remove duplicate line
