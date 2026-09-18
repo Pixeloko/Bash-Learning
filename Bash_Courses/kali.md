@@ -23,7 +23,6 @@ docker ps -q | xargs docker inspect
 ```
 * `tr 'search' 'subtitution'` means translate
 * `eval` execute a command stocked in a char, interpreting pipe etc
-* `dpkg -l` list packages
 * `sudo vi` > `:!bash` launch a bash shell with root right (the user who launch vi) 
 * `passwd` change the password of the actual 
 
@@ -40,6 +39,12 @@ docker ps -q | xargs docker inspect
 |DEBUG|<action> is executed before every command|
 |RETURN|<action> executed each time a function or script is executed|
 
+## Package / Extraction
+* `dpkg -l` list packages
+* `dpkg -b <dir> <package>` to build
+* `dpkg -i <dir> <package>` to install, -r to remove
+* `ar -x <deb-package>` extract content on .deb files
+* `alien -r <package> --scripts` convert DEB to RPM format, `-d` from RPM to DEB, scripts for verbose output
 
 ## Distinction printf and print
 printf is more formatted and controls decimals

